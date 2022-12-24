@@ -11,6 +11,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int number = 0;
+  int _currentindex = 0;
   late PageController pageController;
   Color highlightedtabcolor(int i) {
     late Color newColor = Colors.white;
@@ -88,8 +89,10 @@ class _HomeScreenState extends State<HomeScreen> {
               fontSize: 12,
             ),
             backgroundColor: ksoftcolor,
-            currentIndex: 0,
-            // onTap: ,
+            currentIndex: _currentindex,
+            onTap: (value) => setState(() {
+                  _currentindex = value;
+                }),
             selectedItemColor: Colors.white,
             unselectedItemColor: const Color.fromARGB(255, 110, 109, 109),
             items: const [
