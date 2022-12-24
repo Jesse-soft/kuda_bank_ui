@@ -1,10 +1,7 @@
 # kuda_bank_ui
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
+A kuda bank recent Ui designed with flutter material design palette with 
+sweet user interactions
 
 A few resources to get you started if this is your first Flutter project:
 
