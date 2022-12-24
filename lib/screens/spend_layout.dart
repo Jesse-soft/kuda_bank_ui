@@ -86,7 +86,7 @@ spendLayout() {
                 bottom: 20,
               ),
               child: Text(
-                '₦389.14',
+                '₦389,765.14',
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 25,

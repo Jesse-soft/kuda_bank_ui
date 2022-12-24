@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kuda_bank_ui/constants.dart';
+import 'package:kuda_bank_ui/screens/borrow_layout.dart';
+import 'package:kuda_bank_ui/screens/save_layout.dart';
 import 'package:kuda_bank_ui/screens/spend_layout.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,17 +14,19 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int number = 0;
   int _currentindex = 0;
+  late Color greenColor = const Color.fromARGB(255, 74, 182, 133);
+  late Color blueColor = const Color.fromARGB(255, 82, 167, 237);
   late PageController pageController;
   Color highlightedtabcolor(int i) {
     late Color newColor = Colors.white;
 
     if (i == 1) {
       setState(() {
-        newColor = const Color.fromARGB(255, 97, 230, 101);
+        newColor = greenColor;
       });
     } else if (i == 2) {
       setState(() {
-        newColor = const Color.fromARGB(255, 82, 167, 237);
+        newColor = blueColor;
       });
     }
     return newColor;
@@ -175,12 +179,15 @@ class _HomeScreenState extends State<HomeScreen> {
               width: double.infinity,
               height: 500,
               child: PageView(
+                onPageChanged: (value) => setState(() {
+                  highlightedtabcolor(value);
+                }),
                 controller: pageController,
                 physics: const BouncingScrollPhysics(),
                 children: [
                   spendLayout(),
-                  spendLayout(),
-                  spendLayout(),
+                  saveLayout(greenColor),
+                  borrowLayout(blueColor)
                 ],
               ),
             )
