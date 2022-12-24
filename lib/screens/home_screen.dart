@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:kuda_bank_ui/constants.dart';
 import 'package:kuda_bank_ui/screens/spend_layout.dart';
@@ -91,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             backgroundColor: ksoftcolor,
             currentIndex: 0,
-           // onTap: ,
+            // onTap: ,
             selectedItemColor: Colors.white,
             unselectedItemColor: const Color.fromARGB(255, 110, 109, 109),
             items: const [
