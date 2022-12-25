@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               BottomNavigationBarItem(
                 label: "Pay",
-                icon: Icon(Icons.send),
+                icon: Icon(Icons.near_me_sharp),
               ),
               BottomNavigationBarItem(
                 label: "Invest",
