@@ -142,7 +142,7 @@ class _HomePageState extends State<HomePage> {
         ),
         SizedBox(
           width: double.infinity,
-          height: 500,
+          height: 561,
           child: PageView(
             onPageChanged: (value) => setState(() {
               highlightedtabcolor(value);

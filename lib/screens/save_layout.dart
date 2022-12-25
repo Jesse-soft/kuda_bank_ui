@@ -76,10 +76,10 @@ saveLayout(Color savingscolor) {
                 vertical: 10,
               ),
               child: const Text(
-                'Recent Transaction',
+                'Your Pockets',
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 14,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold),
               ),
             ),

@@ -10,7 +10,7 @@ getTransaction() {
         Container(
           width: double.infinity,
           color: ksoftbackgroundcolor,
-          padding: const EdgeInsets.only(left: 5, top: 5),
+          padding: const EdgeInsets.symmetric(vertical: 8),
           child: ListTile(
             leading: const CircleAvatar(
               backgroundImage: AssetImage('images/avatar.png'),
@@ -38,18 +38,26 @@ getTransaction() {
                 )
               ],
             ),
-            trailing: Text(
-              amountoftransaction[i],
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold),
+            trailing: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  amountoftransaction[i],
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  height: 10,
+                )
+              ],
             ),
           ),
         ),
         const Divider(
           height: 3,
-          color: ksoftcolor,
+          color: Color.fromARGB(255, 82, 81, 81),
         )
       ],
     );
@@ -128,19 +136,20 @@ spendLayout() {
           children: [
             Container(
               width: double.infinity,
-              color: ksoftbackgroundcolor,
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 10,
+              padding: const EdgeInsets.only(
+                top: 5,
+                left: 20,
+                bottom: 5,
               ),
               child: const Text(
-                'Recent Transaction',
+                '07 Nov 2022',
                 style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold),
+                  color: Colors.white54,
+                  fontSize: 9,
+                ),
               ),
             ),
+            getTransaction(),
             Container(
               width: double.infinity,
               padding: const EdgeInsets.only(
@@ -149,7 +158,7 @@ spendLayout() {
                 bottom: 5,
               ),
               child: const Text(
-                '07 Nov 2022',
+                '03 Nov 2022',
                 style: TextStyle(
                   color: Colors.white54,
                   fontSize: 9,
