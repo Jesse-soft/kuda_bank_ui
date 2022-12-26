@@ -17,8 +17,18 @@ late PageController pageController;
 class _HomePageState extends State<HomePage> {
   int number = 0;
 
-  late Color greenColor = const Color.fromARGB(255, 74, 182, 133);
-  late Color blueColor = const Color.fromARGB(255, 82, 167, 237);
+  late Color greenColor = const Color.fromARGB(
+    255,
+    74,
+    182,
+    133,
+  );
+  late Color blueColor = const Color.fromARGB(
+    255,
+    82,
+    167,
+    237,
+  );
 
   Color highlightedtabcolor(int i) {
     late Color newColor = Colors.white;
@@ -59,21 +69,35 @@ class _HomePageState extends State<HomePage> {
           );
         },
         child: Container(
-          margin: const EdgeInsets.only(right: 10),
-          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 14),
+          margin: const EdgeInsets.only(
+            right: 10,
+          ),
+          padding: const EdgeInsets.symmetric(
+            vertical: 8,
+            horizontal: 14,
+          ),
           decoration: BoxDecoration(
-              color: ksoftcolor, borderRadius: BorderRadius.circular(8)),
+            color: ksoftcolor,
+            borderRadius: BorderRadius.circular(
+              8,
+            ),
+          ),
           child: Text(
             tabs[i],
             style: TextStyle(
-              color:
-                  number == i ? highlightedtabcolor(i) : unhighlightedtabcolor,
+              color: number == i
+                  ? highlightedtabcolor(
+                      i,
+                    )
+                  : unhighlightedtabcolor,
               fontSize: 14,
             ),
           ),
         ),
       );
-      tabslist.add(newItem);
+      tabslist.add(
+        newItem,
+      );
     }
     return Row(
       children: tabslist,
@@ -82,7 +106,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    pageController = PageController(initialPage: 0);
+    pageController = PageController(
+      initialPage: 0,
+    );
     super.initState();
   }
 
@@ -145,14 +171,20 @@ class _HomePageState extends State<HomePage> {
           height: 561,
           child: PageView(
             onPageChanged: (value) => setState(() {
-              highlightedtabcolor(value);
+              highlightedtabcolor(
+                value,
+              );
             }),
             controller: pageController,
             physics: const BouncingScrollPhysics(),
             children: [
               spendLayout(),
-              saveLayout(greenColor),
-              borrowLayout(blueColor)
+              saveLayout(
+                greenColor,
+              ),
+              borrowLayout(
+                blueColor,
+              )
             ],
           ),
         )

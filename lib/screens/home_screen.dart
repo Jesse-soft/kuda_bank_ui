@@ -37,28 +37,43 @@ class _HomeScreenState extends State<HomeScreen> {
                   _currentindex = value;
                 }),
             selectedItemColor: Colors.white,
-            unselectedItemColor: const Color.fromARGB(255, 110, 109, 109),
+            unselectedItemColor: const Color.fromARGB(
+              255,
+              110,
+              109,
+              109,
+            ),
             items: const [
               BottomNavigationBarItem(
                 backgroundColor: ksoftcolor,
                 label: "Home",
-                icon: Icon(Icons.home),
+                icon: Icon(
+                  Icons.home,
+                ),
               ),
               BottomNavigationBarItem(
                 label: "Pay",
-                icon: Icon(Icons.near_me_sharp),
+                icon: Icon(
+                  Icons.near_me_sharp,
+                ),
               ),
               BottomNavigationBarItem(
                 label: "Invest",
-                icon: Icon(Icons.trending_up),
+                icon: Icon(
+                  Icons.trending_up,
+                ),
               ),
               BottomNavigationBarItem(
                 label: "Cards",
-                icon: Icon(Icons.credit_card),
+                icon: Icon(
+                  Icons.credit_card,
+                ),
               ),
               BottomNavigationBarItem(
                 label: "More",
-                icon: Icon(Icons.more),
+                icon: Icon(
+                  Icons.more,
+                ),
               ),
             ]),
         backgroundColor: Colors.black,

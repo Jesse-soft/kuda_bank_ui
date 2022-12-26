@@ -1,7 +1,17 @@
 import 'package:flutter/animation.dart';
 
-const Color ksoftcolor = Color.fromARGB(48, 111, 111, 111);
-const Color ksoftbackgroundcolor = Color.fromARGB(42, 127, 127, 127);
+const Color ksoftcolor = Color.fromARGB(
+  48,
+  111,
+  111,
+  111,
+);
+const Color ksoftbackgroundcolor = Color.fromARGB(
+  42,
+  127,
+  127,
+  127,
+);
 List<String> detailsoftransaction = [
   'SPEND AND SAVE',
   'ANSLEM IKECHUKWU',

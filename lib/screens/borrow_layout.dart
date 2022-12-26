@@ -38,6 +38,94 @@ borrowLayout(Color borrowcolor) {
           ],
         ),
       ),
+      Container(
+        margin: const EdgeInsets.only(
+          bottom: 10,
+        ),
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 14),
+        decoration: BoxDecoration(
+          color: ksoftcolor,
+          borderRadius: BorderRadius.circular(6),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(
+                    bottom: 10,
+                  ),
+                  width: 120,
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 3,
+                    horizontal: 4,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.amber,
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: const Text('Coming Soon'),
+                ),
+                const Text(
+                  'Load',
+                  style: TextStyle(
+                    color: Colors.white54,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const Text(
+                  'Apply for a low-interest loan, get money in minute',
+                  overflow: TextOverflow.clip,
+                  style: TextStyle(color: Colors.white54, fontSize: 12),
+                )
+              ],
+            ),
+            const Icon(
+              Icons.flaky_outlined,
+            )
+          ],
+        ),
+      ),
+      Container(
+        margin: const EdgeInsets.only(
+          top: 20,
+          bottom: 10,
+        ),
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 14),
+        decoration: BoxDecoration(
+          color: ksoftcolor,
+          borderRadius: BorderRadius.circular(6),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              children: const [
+                Text(
+                  'Overdraft',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  'Spend when your account balance is low and repay whenever you get paid.',
+                  overflow: TextOverflow.clip,
+                  style: TextStyle(color: Colors.white, fontSize: 12),
+                )
+              ],
+            ),
+            const Icon(
+              Icons.flaky_outlined,
+            )
+          ],
+        ),
+      ),
       // Expanded(
       //   child: ListView(
       //     children: [

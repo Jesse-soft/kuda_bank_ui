@@ -8,7 +8,11 @@ class MorePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: const Center(child: Text('More')),
+        title: const Center(
+          child: Text(
+            'More',
+          ),
+        ),
         backgroundColor: ksoftbackgroundcolor,
       ),
     );

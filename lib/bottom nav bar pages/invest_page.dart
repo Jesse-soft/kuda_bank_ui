@@ -11,7 +11,9 @@ class InvestPage extends StatelessWidget {
         title: const Center(
             child: Text(
           'Invest',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
         )),
         backgroundColor: ksoftbackgroundcolor,
       ),

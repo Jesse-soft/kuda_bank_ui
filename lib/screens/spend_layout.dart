@@ -10,10 +10,14 @@ getTransaction() {
         Container(
           width: double.infinity,
           color: ksoftbackgroundcolor,
-          padding: const EdgeInsets.symmetric(vertical: 8),
+          padding: const EdgeInsets.symmetric(
+            vertical: 8,
+          ),
           child: ListTile(
             leading: const CircleAvatar(
-              backgroundImage: AssetImage('images/avatar.png'),
+              backgroundImage: AssetImage(
+                'images/avatar.png',
+              ),
             ),
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,9 +26,10 @@ getTransaction() {
                   detailsoftransaction[i],
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400),
+                    color: Colors.white,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
                 const SizedBox(
                   height: 5,
@@ -32,9 +37,10 @@ getTransaction() {
                 Text(
                   timeoftransaction[i],
                   style: const TextStyle(
-                      color: Colors.white70,
-                      fontSize: 10,
-                      fontWeight: FontWeight.normal),
+                    color: Colors.white70,
+                    fontSize: 10,
+                    fontWeight: FontWeight.normal,
+                  ),
                 )
               ],
             ),
@@ -44,9 +50,10 @@ getTransaction() {
                 Text(
                   amountoftransaction[i],
                   style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold),
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 const SizedBox(
                   height: 10,
@@ -57,11 +64,18 @@ getTransaction() {
         ),
         const Divider(
           height: 3,
-          color: Color.fromARGB(255, 82, 81, 81),
+          color: Color.fromARGB(
+            255,
+            82,
+            81,
+            81,
+          ),
         )
       ],
     );
-    transactionlist.add(newItem);
+    transactionlist.add(
+      newItem,
+    );
   }
   return Column(
     children: transactionlist,
@@ -86,7 +100,10 @@ spendLayout() {
               ),
               child: Text(
                 ' Account balance',
-                style: TextStyle(color: Colors.white54, fontSize: 12),
+                style: TextStyle(
+                  color: Colors.white54,
+                  fontSize: 12,
+                ),
               ),
             ),
             const Padding(
@@ -96,9 +113,10 @@ spendLayout() {
               child: Text(
                 '₦389,765.14',
                 style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
+                  color: Colors.white,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             Container(
@@ -106,9 +124,16 @@ spendLayout() {
                 bottom: 10,
               ),
               width: 170,
-              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 14),
+              padding: const EdgeInsets.symmetric(
+                vertical: 8,
+                horizontal: 14,
+              ),
               decoration: BoxDecoration(
-                  color: ksoftcolor, borderRadius: BorderRadius.circular(6)),
+                color: ksoftcolor,
+                borderRadius: BorderRadius.circular(
+                  6,
+                ),
+              ),
               child: Row(
                 children: const [
                   Icon(
@@ -121,9 +146,10 @@ spendLayout() {
                   Text(
                     'Add Money',
                     style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold),
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
