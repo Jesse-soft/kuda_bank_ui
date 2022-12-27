@@ -149,54 +149,31 @@ saveLayout(Color savingscolor) {
           ],
         ),
       ),
-      Expanded(
-        child: ListView(
-          children: [
-            Container(
-              width: double.infinity,
-              color: ksoftbackgroundcolor,
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 10,
-              ),
-              child: const Text(
-                'Your Pockets',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            const Divider(
-              height: 3,
-              color: Color.fromARGB(
-                255,
-                82,
-                81,
-                81,
-              ),
-            ),
-            //getSavingsInfo(),
-            // Container(
-            //   width: double.infinity,
-            //   padding: const EdgeInsets.only(
-            //     top: 5,
-            //     left: 20,
-            //     bottom: 5,
-            //   ),
-            //   child: const Text(
-            //     '07 Nov 2022',
-            //     style: TextStyle(
-            //       color: Colors.white54,
-            //       fontSize: 9,
-            //     ),
-            //   ),
-            // ),
-            //  getTransaction(),
-          ],
+      Container(
+        width: double.infinity,
+        color: ksoftbackgroundcolor,
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 10,
+        ),
+        child: const Text(
+          'Your Pockets',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
+      const Divider(
+        height: 3,
+        color: Color.fromARGB(150, 82, 81, 81),
+      ),
+      Expanded(
+        child: Container(
+          color: ksoftbackgroundcolor,
+        ),
+      )
     ],
   );
 }

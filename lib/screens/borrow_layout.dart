@@ -148,10 +148,14 @@ borrowLayout(Color borrowcolor) {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text(
-                      'Spend when your account balance is low and repay whenever you get paid.',
-                      overflow: TextOverflow.clip,
-                      style: TextStyle(color: Colors.white, fontSize: 12),
+                    ClipRect(
+                      clipBehavior: Clip.hardEdge,
+                      child: Text(
+                        'Spend when your account balance is low and\nrepay whenever you get paid.',
+                        maxLines: 2,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(color: Colors.white, fontSize: 12),
+                      ),
                     )
                   ],
                 ),

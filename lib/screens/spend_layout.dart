@@ -64,12 +64,7 @@ getTransaction() {
         ),
         const Divider(
           height: 3,
-          color: Color.fromARGB(
-            255,
-            82,
-            81,
-            81,
-          ),
+          color: Color.fromARGB(129, 82, 81, 81),
         )
       ],
     );
