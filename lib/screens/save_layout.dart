@@ -177,7 +177,7 @@ saveLayout(Color savingscolor) {
                 81,
               ),
             ),
-            getSavingsInfo(),
+            //getSavingsInfo(),
             // Container(
             //   width: double.infinity,
             //   padding: const EdgeInsets.only(
