@@ -170,40 +170,82 @@ spendLayout(ontap, onDoubleTap) {
                 ],
               ),
             ),
-            Container(
-              margin: const EdgeInsets.only(
-                bottom: 10,
-              ),
-              width: 170,
-              padding: const EdgeInsets.symmetric(
-                vertical: 8,
-                horizontal: 14,
-              ),
-              decoration: BoxDecoration(
-                color: ksoftcolor,
-                borderRadius: BorderRadius.circular(
-                  6,
-                ),
-              ),
-              child: Row(
-                children: const [
-                  Icon(
-                    Icons.add_circle_rounded,
-                    color: Colors.white,
+            Row(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(
+                    bottom: 10,
                   ),
-                  SizedBox(
-                    width: 8,
+                  width: 170,
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 8,
+                    horizontal: 14,
                   ),
-                  Text(
-                    'Add Money',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
+                  decoration: BoxDecoration(
+                    color: ksoftcolor,
+                    borderRadius: BorderRadius.circular(
+                      6,
                     ),
                   ),
-                ],
-              ),
+                  child: Row(
+                    children: [
+                      const Icon(
+                        Icons.restart_alt,
+                        color: ksoftcolor,
+                      ),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      Text(
+                        'Convert',
+                        style: TextStyle(
+                          color: Colors.grey.shade800,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  width: 30,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(
+                    bottom: 10,
+                  ),
+                  width: 170,
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 8,
+                    horizontal: 14,
+                  ),
+                  decoration: BoxDecoration(
+                    color: ksoftcolor,
+                    borderRadius: BorderRadius.circular(
+                      6,
+                    ),
+                  ),
+                  child: Row(
+                    children: const [
+                      Icon(
+                        Icons.add_circle_rounded,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Text(
+                        'Add Money',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
