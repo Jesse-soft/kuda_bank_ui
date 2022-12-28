@@ -101,17 +101,37 @@ spendLayout() {
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(
+            Padding(
+              padding: const EdgeInsets.only(
                 bottom: 20,
               ),
-              child: Text(
-                '₦389,765.14',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    '₦389,765.14',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  ClipRect(
+                    child: SizedBox(
+                      width: 25,
+                      height: 25,
+                      child: Image.asset(
+                        "lib/icons/see_more.png",
+                        color: const Color.fromARGB(
+                          255,
+                          110,
+                          109,
+                          109,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
             Container(

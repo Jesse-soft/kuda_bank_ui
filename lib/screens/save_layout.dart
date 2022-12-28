@@ -102,13 +102,33 @@ saveLayout(Color savingscolor) {
               padding: const EdgeInsets.only(
                 bottom: 20,
               ),
-              child: Text(
-                '₦89,567.14',
-                style: TextStyle(
-                  color: savingscolor,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '₦89,567.14',
+                    style: TextStyle(
+                      color: savingscolor,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  ClipRect(
+                    child: SizedBox(
+                      width: 25,
+                      height: 25,
+                      child: Image.asset(
+                        "lib/icons/see_more.png",
+                        color: const Color.fromARGB(
+                          255,
+                          110,
+                          109,
+                          109,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
             Container(

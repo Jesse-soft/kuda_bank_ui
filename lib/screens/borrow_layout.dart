@@ -27,12 +27,30 @@ borrowLayout(Color borrowcolor) {
               padding: const EdgeInsets.only(
                 bottom: 20,
               ),
-              child: Text(
-                '₦0.00',
-                style: TextStyle(
-                    color: borrowcolor,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '₦0.00',
+                    style: TextStyle(
+                        color: borrowcolor,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  ClipRect(
+                    child: SizedBox(
+                      width: 25,
+                      height: 25,
+                      child: Image.asset("lib/icons/see_more.png",
+                          color: const Color.fromARGB(
+                            255,
+                            110,
+                            109,
+                            109,
+                          )),
+                    ),
+                  )
+                ],
               ),
             ),
           ],
@@ -61,6 +79,7 @@ borrowLayout(Color borrowcolor) {
               horizontal: 8,
             ),
             child: Row(
+              textBaseline: TextBaseline.ideographic,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
@@ -71,19 +90,19 @@ borrowLayout(Color borrowcolor) {
                       margin: const EdgeInsets.only(
                         bottom: 10,
                       ),
-                      width: 120,
                       padding: const EdgeInsets.symmetric(
                         vertical: 3,
-                        horizontal: 2,
+                        horizontal: 7,
                       ),
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 242, 189, 31),
+                        color: const Color.fromARGB(255, 242, 189, 31),
                         borderRadius: BorderRadius.circular(6),
                       ),
                       child: const Center(
                         child: Text(
                           'Coming Soon',
                           style: TextStyle(
+                            fontSize: 12,
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
                           ),
@@ -105,8 +124,15 @@ borrowLayout(Color borrowcolor) {
                     )
                   ],
                 ),
-                const Icon(
-                  Icons.flaky_outlined,
+                ClipRect(
+                  child: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Image.asset(
+                      "lib/icons/money.png",
+                      color: borrowcolor,
+                    ),
+                  ),
                 )
               ],
             ),
@@ -139,8 +165,8 @@ borrowLayout(Color borrowcolor) {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       'Overdraft',
                       style: TextStyle(
                         color: Colors.white,
@@ -148,9 +174,11 @@ borrowLayout(Color borrowcolor) {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    ClipRect(
-                      clipBehavior: Clip.hardEdge,
-                      child: Text(
+                    Container(
+                      margin: const EdgeInsets.only(
+                        top: 8.0,
+                      ),
+                      child: const Text(
                         'Spend when your account balance is low and\nrepay whenever you get paid.',
                         maxLines: 2,
                         overflow: TextOverflow.clip,
@@ -159,8 +187,20 @@ borrowLayout(Color borrowcolor) {
                     )
                   ],
                 ),
-                const Icon(
-                  Icons.flaky_outlined,
+                ClipRect(
+                  child: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Image.asset(
+                      "lib/icons/hot_air_balloon.png",
+                      color: const Color.fromARGB(
+                        255,
+                        74,
+                        182,
+                        133,
+                      ),
+                    ),
+                  ),
                 )
               ],
             ),

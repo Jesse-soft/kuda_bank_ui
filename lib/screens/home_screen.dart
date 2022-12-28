@@ -22,6 +22,13 @@ class _HomeScreenState extends State<HomeScreen> {
     const CardPage(),
     const MorePage(),
   ];
+  late Color unSelectedIcon = const Color.fromARGB(
+    255,
+    110,
+    109,
+    109,
+  );
+  late Color selectedIcon = Colors.white;
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -37,14 +44,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   _currentindex = value;
                 }),
             selectedItemColor: Colors.white,
-            unselectedItemColor: const Color.fromARGB(
-              255,
-              110,
-              109,
-              109,
-            ),
-            items: const [
-              BottomNavigationBarItem(
+            unselectedItemColor: unSelectedIcon,
+            items: [
+              const BottomNavigationBarItem(
                 backgroundColor: ksoftcolor,
                 label: "Home",
                 icon: Icon(
@@ -53,26 +55,54 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               BottomNavigationBarItem(
                 label: "Pay",
-                icon: Icon(
-                  Icons.near_me_sharp,
+                icon: ClipRect(
+                  child: SizedBox(
+                    width: 28,
+                    height: 20,
+                    child: Image.asset(
+                      "lib/icons/send.png",
+                      color: _currentindex == 1 ? selectedIcon : unSelectedIcon,
+                    ),
+                  ),
                 ),
               ),
               BottomNavigationBarItem(
                 label: "Invest",
-                icon: Icon(
-                  Icons.trending_up,
+                icon: ClipRect(
+                  child: SizedBox(
+                    width: 28,
+                    height: 20,
+                    child: Image.asset(
+                      "lib/icons/trend.png",
+                      color: _currentindex == 2 ? selectedIcon : unSelectedIcon,
+                    ),
+                  ),
                 ),
               ),
               BottomNavigationBarItem(
                 label: "Cards",
-                icon: Icon(
-                  Icons.credit_card,
+                icon: ClipRect(
+                  child: SizedBox(
+                    width: 28,
+                    height: 20,
+                    child: Image.asset(
+                      "lib/icons/credit_card.png",
+                      color: _currentindex == 3 ? selectedIcon : unSelectedIcon,
+                    ),
+                  ),
                 ),
               ),
               BottomNavigationBarItem(
                 label: "More",
-                icon: Icon(
-                  Icons.more,
+                icon: ClipRect(
+                  child: SizedBox(
+                    width: 28,
+                    height: 20,
+                    child: Image.asset(
+                      "lib/icons/more.png",
+                      color: _currentindex == 4 ? selectedIcon : unSelectedIcon,
+                    ),
+                  ),
                 ),
               ),
             ]),

@@ -150,10 +150,14 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-                  const Icon(
-                    Icons.pie_chart,
-                    size: 25,
-                    color: Colors.white,
+                  ClipRect(
+                    child: SizedBox(
+                      width: 20,
+                      height: 20,
+                      child: Image.asset(
+                        "lib/icons/pie_chart.png",
+                      ),
+                    ),
                   )
                 ],
               ),
@@ -171,9 +175,7 @@ class _HomePageState extends State<HomePage> {
           height: 561,
           child: PageView(
             onPageChanged: (value) => setState(() {
-              highlightedtabcolor(
-                value,
-              );
+              number = value;
             }),
             controller: pageController,
             physics: const BouncingScrollPhysics(),
