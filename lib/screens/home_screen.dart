@@ -54,6 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               BottomNavigationBarItem(
+                backgroundColor: ksoftcolor,
                 label: "Pay",
                 icon: ClipRect(
                   child: SizedBox(
@@ -67,6 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               BottomNavigationBarItem(
+                backgroundColor: ksoftcolor,
                 label: "Invest",
                 icon: ClipRect(
                   child: SizedBox(
@@ -80,6 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               BottomNavigationBarItem(
+                backgroundColor: ksoftcolor,
                 label: "Cards",
                 icon: ClipRect(
                   child: SizedBox(
@@ -93,6 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               BottomNavigationBarItem(
+                backgroundColor: ksoftcolor,
                 label: "More",
                 icon: ClipRect(
                   child: SizedBox(
