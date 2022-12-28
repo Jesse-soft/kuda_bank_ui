@@ -180,13 +180,33 @@ class _HomePageState extends State<HomePage> {
             controller: pageController,
             physics: const BouncingScrollPhysics(),
             children: [
-              spendLayout(),
-              saveLayout(
-                greenColor,
-              ),
-              borrowLayout(
-                blueColor,
-              )
+              spendLayout(() {
+                setState(() {
+                  blurImage = 5;
+                });
+              }, () {
+                setState(() {
+                  blurImage = 0.1;
+                });
+              }),
+              saveLayout(greenColor, () {
+                setState(() {
+                  blurImage = 5;
+                });
+              }, () {
+                setState(() {
+                  blurImage = 0.1;
+                });
+              }),
+              borrowLayout(blueColor, () {
+                setState(() {
+                  blurImage = 5;
+                });
+              }, () {
+                setState(() {
+                  blurImage = 0.1;
+                });
+              })
             ],
           ),
         )

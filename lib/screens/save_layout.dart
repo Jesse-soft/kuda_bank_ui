@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:kuda_bank_ui/screens/spend_layout.dart';
 
 import '../constants.dart';
 
@@ -74,7 +77,11 @@ getSavingsInfo() {
   );
 }
 
-saveLayout(Color savingscolor) {
+saveLayout(
+  Color savingscolor,
+  onTap,
+  onDoubleTap,
+) {
   return Column(
     children: [
       Container(
@@ -105,25 +112,52 @@ saveLayout(Color savingscolor) {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    '₦89,567.14',
-                    style: TextStyle(
-                      color: savingscolor,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Stack(
+                    children: [
+                      Text(
+                        '₦89,567.14',
+                        style: TextStyle(
+                          color: savingscolor,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Positioned.fill(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(
+                            8,
+                          ),
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(
+                              sigmaX: blurImage,
+                              tileMode: TileMode.mirror,
+                              sigmaY: blurImage,
+                            ),
+                            child: Container(
+                              color: Colors.white70.withOpacity(
+                                0.0,
+                              ),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                   ClipRect(
-                    child: SizedBox(
-                      width: 25,
-                      height: 25,
-                      child: Image.asset(
-                        "lib/icons/see_more.png",
-                        color: const Color.fromARGB(
-                          255,
-                          110,
-                          109,
-                          109,
+                    child: GestureDetector(
+                      onDoubleTap: onDoubleTap,
+                      onTap: onTap,
+                      child: SizedBox(
+                        width: 25,
+                        height: 25,
+                        child: Image.asset(
+                          "lib/icons/see_more.png",
+                          color: const Color.fromARGB(
+                            255,
+                            110,
+                            109,
+                            109,
+                          ),
                         ),
                       ),
                     ),

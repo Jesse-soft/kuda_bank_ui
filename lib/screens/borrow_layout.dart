@@ -1,8 +1,15 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:kuda_bank_ui/screens/spend_layout.dart';
 
 import '../constants.dart';
 
-borrowLayout(Color borrowcolor) {
+borrowLayout(
+  Color borrowcolor,
+  onTap,
+  onDoubleTap,
+) {
   return Column(
     children: [
       Container(
@@ -30,24 +37,51 @@ borrowLayout(Color borrowcolor) {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    '₦0.00',
-                    style: TextStyle(
-                        color: borrowcolor,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold),
+                  Stack(
+                    children: [
+                      Text(
+                        '₦0.00',
+                        style: TextStyle(
+                            color: borrowcolor,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Positioned.fill(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(
+                            8,
+                          ),
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(
+                              sigmaX: blurImage,
+                              tileMode: TileMode.mirror,
+                              sigmaY: blurImage,
+                            ),
+                            child: Container(
+                              color: Colors.white70.withOpacity(
+                                0.0,
+                              ),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
                   ),
-                  ClipRect(
-                    child: SizedBox(
-                      width: 25,
-                      height: 25,
-                      child: Image.asset("lib/icons/see_more.png",
-                          color: const Color.fromARGB(
-                            255,
-                            110,
-                            109,
-                            109,
-                          )),
+                  GestureDetector(
+                    onDoubleTap: onDoubleTap,
+                    onTap: onTap,
+                    child: ClipRect(
+                      child: SizedBox(
+                        width: 25,
+                        height: 25,
+                        child: Image.asset("lib/icons/see_more.png",
+                            color: const Color.fromARGB(
+                              255,
+                              110,
+                              109,
+                              109,
+                            )),
+                      ),
                     ),
                   )
                 ],

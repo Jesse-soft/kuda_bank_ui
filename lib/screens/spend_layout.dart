@@ -1,7 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
+double blurImage = 0.1;
 getTransaction() {
   List<Column> transactionlist = [];
   for (int i = 0; i < detailsoftransaction.length; i++) {
@@ -46,19 +49,25 @@ getTransaction() {
             ),
             trailing: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text(
-                  amountoftransaction[i],
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                )
-              ],
+              children: blurImage == 5
+                  ? [
+                      const Text(
+                        "",
+                      ),
+                    ]
+                  : [
+                      Text(
+                        amountoftransaction[i],
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      )
+                    ],
             ),
           ),
         ),
@@ -77,7 +86,7 @@ getTransaction() {
   );
 }
 
-spendLayout() {
+spendLayout(ontap, onDoubleTap) {
   return Column(
     children: [
       Container(
@@ -108,25 +117,52 @@ spendLayout() {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    '₦389,765.14',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Stack(
+                    children: [
+                      const Text(
+                        '₦389,765.14',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Positioned.fill(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(
+                            8,
+                          ),
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(
+                              sigmaX: blurImage,
+                              tileMode: TileMode.mirror,
+                              sigmaY: blurImage,
+                            ),
+                            child: Container(
+                              color: Colors.white70.withOpacity(
+                                0.0,
+                              ),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                   ClipRect(
-                    child: SizedBox(
-                      width: 25,
-                      height: 25,
-                      child: Image.asset(
-                        "lib/icons/see_more.png",
-                        color: const Color.fromARGB(
-                          255,
-                          110,
-                          109,
-                          109,
+                    child: GestureDetector(
+                      onTap: ontap,
+                      onDoubleTap: onDoubleTap,
+                      child: SizedBox(
+                        width: 25,
+                        height: 25,
+                        child: Image.asset(
+                          "lib/icons/see_more.png",
+                          color: const Color.fromARGB(
+                            255,
+                            110,
+                            109,
+                            109,
+                          ),
                         ),
                       ),
                     ),
