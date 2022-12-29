@@ -116,100 +116,103 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          color: ksoftbackgroundcolor,
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 20,
-          ),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: const [
-                      CircleAvatar(
-                        radius: 18,
-                        backgroundImage: AssetImage(
-                          'images/avatar.png',
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: 15,
-                        ),
-                        child: Text(
-                          'Hi, Jesse',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
+        Expanded(
+          child: Container(
+            color: ksoftbackgroundcolor,
+            padding: const EdgeInsets.only(
+              top: 20,
+              left: 20,
+              right: 20,
+            ),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: const [
+                        CircleAvatar(
+                          radius: 18,
+                          backgroundImage: AssetImage(
+                            'images/avatar.png',
                           ),
                         ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 15,
+                          ),
+                          child: Text(
+                            'Hi, Jesse',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    ClipRect(
+                      child: SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: Image.asset(
+                          "lib/icons/pie_chart.png",
+                        ),
                       ),
+                    )
+                  ],
+                ),
+                Container(
+                  margin: const EdgeInsets.only(
+                    top: 25,
+                  ),
+                  child: getTabs(),
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  height: 561,
+                  child: PageView(
+                    onPageChanged: (value) => setState(() {
+                      number = value;
+                    }),
+                    controller: pageController,
+                    physics: const BouncingScrollPhysics(),
+                    children: [
+                      spendLayout(() {
+                        setState(() {
+                          blurImage = 5;
+                        });
+                      }, () {
+                        setState(() {
+                          blurImage = 0.1;
+                        });
+                      }),
+                      saveLayout(greenColor, () {
+                        setState(() {
+                          blurImage = 5;
+                        });
+                      }, () {
+                        setState(() {
+                          blurImage = 0.1;
+                        });
+                      }),
+                      borrowLayout(blueColor, () {
+                        setState(() {
+                          blurImage = 5;
+                        });
+                      }, () {
+                        setState(() {
+                          blurImage = 0.1;
+                        });
+                      })
                     ],
                   ),
-                  ClipRect(
-                    child: SizedBox(
-                      width: 20,
-                      height: 20,
-                      child: Image.asset(
-                        "lib/icons/pie_chart.png",
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              Container(
-                margin: const EdgeInsets.only(
-                  top: 25,
-                ),
-                child: getTabs(),
-              ),
-            ],
+                )
+              ],
+            ),
           ),
         ),
-        SizedBox(
-          width: double.infinity,
-          height: 561,
-          child: PageView(
-            onPageChanged: (value) => setState(() {
-              number = value;
-            }),
-            controller: pageController,
-            physics: const BouncingScrollPhysics(),
-            children: [
-              spendLayout(() {
-                setState(() {
-                  blurImage = 5;
-                });
-              }, () {
-                setState(() {
-                  blurImage = 0.1;
-                });
-              }),
-              saveLayout(greenColor, () {
-                setState(() {
-                  blurImage = 5;
-                });
-              }, () {
-                setState(() {
-                  blurImage = 0.1;
-                });
-              }),
-              borrowLayout(blueColor, () {
-                setState(() {
-                  blurImage = 5;
-                });
-              }, () {
-                setState(() {
-                  blurImage = 0.1;
-                });
-              })
-            ],
-          ),
-        )
       ],
     );
   }

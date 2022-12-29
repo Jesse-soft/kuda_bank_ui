@@ -12,7 +12,6 @@ getTransaction() {
       children: [
         Container(
           width: double.infinity,
-          color: ksoftbackgroundcolor,
           padding: const EdgeInsets.symmetric(
             vertical: 8,
           ),
@@ -91,9 +90,8 @@ spendLayout(ontap, onDoubleTap) {
     children: [
       Container(
         width: double.infinity,
-        color: ksoftbackgroundcolor,
         padding: const EdgeInsets.symmetric(
-          horizontal: 20,
+          vertical: 20,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,7 +118,7 @@ spendLayout(ontap, onDoubleTap) {
                   Stack(
                     children: [
                       const Text(
-                        '₦389,765.14',
+                        '₦196,389,765.14',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 25,

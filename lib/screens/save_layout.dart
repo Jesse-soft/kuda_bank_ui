@@ -86,9 +86,8 @@ saveLayout(
     children: [
       Container(
         width: double.infinity,
-        color: ksoftbackgroundcolor,
         padding: const EdgeInsets.symmetric(
-          horizontal: 20,
+          vertical: 20,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -205,9 +204,7 @@ saveLayout(
       ),
       Container(
         width: double.infinity,
-        color: ksoftbackgroundcolor,
         padding: const EdgeInsets.symmetric(
-          horizontal: 20,
           vertical: 10,
         ),
         child: const Text(
@@ -223,11 +220,6 @@ saveLayout(
         height: 3,
         color: Color.fromARGB(150, 82, 81, 81),
       ),
-      Expanded(
-        child: Container(
-          color: ksoftbackgroundcolor,
-        ),
-      )
     ],
   );
 }

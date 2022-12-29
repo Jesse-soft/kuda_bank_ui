@@ -66,7 +66,7 @@ class PayPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
+      appBar: AppBar(elevation: 0,
         title: const Center(
           child: Text(
             'Pay',
