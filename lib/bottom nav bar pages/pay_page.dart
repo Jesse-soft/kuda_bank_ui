@@ -64,70 +64,74 @@ class PayPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(elevation: 0,
-        title: const Center(
-          child: Text(
-            'Pay',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        backgroundColor: Colors.black,
+        appBar: AppBar(
+          elevation: 0,
+          title: const Center(
+            child: Text(
+              'Pay',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
+          backgroundColor: ksoftbackgroundcolor,
+          actions: [
+            IconButton(
+              icon: const Icon(
+                Icons.search,
+              ),
+              tooltip: 'Search Beneficiaries',
+              onPressed: () {
+                // handle the press
+              },
+            ),
+          ],
         ),
-        backgroundColor: ksoftbackgroundcolor,
-        actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.search,
-            ),
-            tooltip: 'Search Beneficiaries',
-            onPressed: () {
-              // handle the press
-            },
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          const Divider(
-            height: 3,
-            color: Color.fromARGB(
-              255,
-              82,
-              81,
-              81,
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                'Beneficiaries',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
+        body: Column(
+          children: [
+            const Divider(
+              height: 3,
+              color: Color.fromARGB(
+                255,
+                82,
+                81,
+                81,
               ),
-              Text(
-                'View All',
-                style: TextStyle(
-                  color: Colors.greenAccent,
-                  fontWeight: FontWeight.bold,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Text(
+                  'Beneficiaries',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 100,
-            width: 500,
-            child: getBeneficiaries(),
-          ),
-          SizedBox(
-            height: 400,
-            child: getPaymentTransactions(),
-          )
-        ],
+                Text(
+                  'View All',
+                  style: TextStyle(
+                    color: Colors.greenAccent,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 100,
+              width: 500,
+              child: getBeneficiaries(),
+            ),
+            SizedBox(
+              height: 400,
+              child: getPaymentTransactions(),
+            )
+          ],
+        ),
       ),
     );
   }
