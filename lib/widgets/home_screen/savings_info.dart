@@ -13,8 +13,7 @@ getSavingsInfo() {
             vertical: 8,
           ),
           child: ListTile(
-            minLeadingWidth: double.infinity,
-            leading: Column(
+            title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
