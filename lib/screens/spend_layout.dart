@@ -103,6 +103,7 @@ spendLayout(
                     color: ksoftcolor,
                   ),
                   140,
+                  Colors.grey,
                 ),
                 const SizedBox(
                   width: 10,
@@ -114,6 +115,7 @@ spendLayout(
                     color: Colors.white,
                   ),
                   150,
+                  Colors.white,
                 ),
               ],
             ),

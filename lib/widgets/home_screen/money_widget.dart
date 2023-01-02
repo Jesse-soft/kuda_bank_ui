@@ -6,6 +6,7 @@ moneyWidget(
   String text,
   Icon buttonIcon,
   double width,
+  Color textColor,
 ) {
   return Container(
     margin: const EdgeInsets.only(
@@ -31,7 +32,7 @@ moneyWidget(
         Text(
           text,
           style: TextStyle(
-            color: Colors.grey.shade800,
+            color: textColor,
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
