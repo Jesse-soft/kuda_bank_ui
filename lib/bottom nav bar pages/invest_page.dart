@@ -100,10 +100,10 @@ class _InvestPageState extends State<InvestPage> {
           const Divider(
             height: 3,
             color: Color.fromARGB(
-              255,
-              82,
-              81,
-              81,
+              237,
+              137,
+              137,
+              137,
             ),
           ),
           Expanded(
