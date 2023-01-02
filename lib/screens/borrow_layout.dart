@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:kuda_bank_ui/screens/spend_layout.dart';
 
 import '../constants.dart';
 
@@ -26,7 +25,10 @@ borrowLayout(
               ),
               child: Text(
                 ' You owe',
-                style: TextStyle(color: Colors.white54, fontSize: 12),
+                style: TextStyle(
+                  color: Colors.white54,
+                  fontSize: 12,
+                ),
               ),
             ),
             Padding(
@@ -41,9 +43,10 @@ borrowLayout(
                       Text(
                         '₦0.00',
                         style: TextStyle(
-                            color: borrowcolor,
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold),
+                          color: borrowcolor,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       Positioned.fill(
                         child: ClipRRect(
@@ -100,7 +103,9 @@ borrowLayout(
         ),
         decoration: BoxDecoration(
           color: ksoftcolor,
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(
+            6,
+          ),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -124,8 +129,15 @@ borrowLayout(
                       horizontal: 7,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 242, 189, 31),
-                      borderRadius: BorderRadius.circular(6),
+                      color: const Color.fromARGB(
+                        255,
+                        242,
+                        189,
+                        31,
+                      ),
+                      borderRadius: BorderRadius.circular(
+                        6,
+                      ),
                     ),
                     child: const Center(
                       child: Text(
@@ -149,7 +161,10 @@ borrowLayout(
                   const Text(
                     'Apply for a low-interest loan, get money in minute',
                     overflow: TextOverflow.clip,
-                    style: TextStyle(color: Colors.white54, fontSize: 12),
+                    style: TextStyle(
+                      color: Colors.white54,
+                      fontSize: 11,
+                    ),
                   )
                 ],
               ),
@@ -173,10 +188,15 @@ borrowLayout(
           bottom: 10,
         ),
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 14),
+        padding: const EdgeInsets.symmetric(
+          vertical: 8,
+          horizontal: 14,
+        ),
         decoration: BoxDecoration(
           color: ksoftcolor,
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(
+            6,
+          ),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -206,7 +226,10 @@ borrowLayout(
                       'Spend when your account balance is low and\nrepay whenever you get paid.',
                       maxLines: 2,
                       overflow: TextOverflow.clip,
-                      style: TextStyle(color: Colors.white, fontSize: 12),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 11,
+                      ),
                     ),
                   )
                 ],

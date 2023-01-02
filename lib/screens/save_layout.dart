@@ -1,81 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:kuda_bank_ui/screens/spend_layout.dart';
 
 import '../constants.dart';
-
-getSavingsInfo() {
-  List<Column> transactionlist = [];
-  for (int i = 0; i < detailsoftransaction.length; i++) {
-    var newItem = Column(
-      children: [
-        Container(
-          width: double.infinity,
-          color: ksoftbackgroundcolor,
-          padding: const EdgeInsets.symmetric(
-            vertical: 8,
-          ),
-          child: ListTile(
-            leading: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    const Icon(
-                      Icons.abc,
-                    ),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      detailsoftransaction[i],
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  timeoftransaction[i],
-                  style: const TextStyle(
-                    color: Colors.white70,
-                    fontSize: 10,
-                    fontWeight: FontWeight.normal,
-                  ),
-                )
-              ],
-            ),
-            trailing: const CircleAvatar(
-              backgroundImage: AssetImage(
-                'images/avatar.png',
-              ),
-            ),
-          ),
-        ),
-        const Divider(
-          height: 3,
-          color: Color.fromARGB(
-            255,
-            82,
-            81,
-            81,
-          ),
-        )
-      ],
-    );
-    transactionlist.add(newItem);
-  }
-  return Column(
-    children: transactionlist,
-  );
-}
+import '../widgets/home_screen/savings_info.dart';
 
 saveLayout(
   Color savingscolor,
@@ -166,7 +94,7 @@ saveLayout(
             ),
             Container(
               margin: const EdgeInsets.only(
-                bottom: 10,
+                bottom: 5,
               ),
               width: 170,
               padding: const EdgeInsets.symmetric(
@@ -205,21 +133,43 @@ saveLayout(
       Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(
-          vertical: 10,
+          vertical: 5,
         ),
-        child: const Text(
-          'Your Pockets',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Text(
+              'Your Pockets',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            // Padding(
+            //   padding: EdgeInsets.only(
+            //     top: 5.0,
+            //   ),
+            //   child: Divider(
+            //     height: 3,
+            //     color: Color.fromARGB(
+            //       150,
+            //       82,
+            //       81,
+            //       81,
+            //     ),
+            //   ),
+            // ),
+          ],
         ),
       ),
-      const Divider(
-        height: 3,
-        color: Color.fromARGB(150, 82, 81, 81),
-      ),
+      Expanded(
+        child: ListView(
+          children: [
+            getSavingsInfo(),
+          ],
+        ),
+      )
     ],
   );
 }

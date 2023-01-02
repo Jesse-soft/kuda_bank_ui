@@ -30,86 +30,89 @@ class _HomeScreenState extends State<HomeScreen> {
   );
   late Color selectedIcon = Colors.white;
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
-            selectedLabelStyle: const TextStyle(
-              fontSize: 12,
+          selectedLabelStyle: const TextStyle(
+            fontSize: 12,
+          ),
+          backgroundColor: ksoftcolor,
+          currentIndex: _currentindex,
+          onTap: (value) => setState(() {
+            _currentindex = value;
+          }),
+          selectedItemColor: Colors.white,
+          unselectedItemColor: unSelectedIcon,
+          items: [
+            const BottomNavigationBarItem(
+              backgroundColor: ksoftcolor,
+              label: "Home",
+              icon: Icon(
+                Icons.home,
+              ),
             ),
-            backgroundColor: ksoftcolor,
-            currentIndex: _currentindex,
-            onTap: (value) => setState(() {
-                  _currentindex = value;
-                }),
-            selectedItemColor: Colors.white,
-            unselectedItemColor: unSelectedIcon,
-            items: [
-              const BottomNavigationBarItem(
-                backgroundColor: ksoftcolor,
-                label: "Home",
-                icon: Icon(
-                  Icons.home,
-                ),
-              ),
-              BottomNavigationBarItem(
-                backgroundColor: ksoftcolor,
-                label: "Pay",
-                icon: ClipRect(
-                  child: SizedBox(
-                    width: 28,
-                    height: 20,
-                    child: Image.asset(
-                      "lib/icons/send.png",
-                      color: _currentindex == 1 ? selectedIcon : unSelectedIcon,
-                    ),
+            BottomNavigationBarItem(
+              backgroundColor: ksoftcolor,
+              label: "Pay",
+              icon: ClipRect(
+                child: SizedBox(
+                  width: 28,
+                  height: 20,
+                  child: Image.asset(
+                    "lib/icons/send.png",
+                    color: _currentindex == 1 ? selectedIcon : unSelectedIcon,
                   ),
                 ),
               ),
-              BottomNavigationBarItem(
-                backgroundColor: ksoftcolor,
-                label: "Invest",
-                icon: ClipRect(
-                  child: SizedBox(
-                    width: 28,
-                    height: 20,
-                    child: Image.asset(
-                      "lib/icons/trend.png",
-                      color: _currentindex == 2 ? selectedIcon : unSelectedIcon,
-                    ),
+            ),
+            BottomNavigationBarItem(
+              backgroundColor: ksoftcolor,
+              label: "Invest",
+              icon: ClipRect(
+                child: SizedBox(
+                  width: 28,
+                  height: 20,
+                  child: Image.asset(
+                    "lib/icons/trend.png",
+                    color: _currentindex == 2 ? selectedIcon : unSelectedIcon,
                   ),
                 ),
               ),
-              BottomNavigationBarItem(
-                backgroundColor: ksoftcolor,
-                label: "Cards",
-                icon: ClipRect(
-                  child: SizedBox(
-                    width: 28,
-                    height: 20,
-                    child: Image.asset(
-                      "lib/icons/credit_card.png",
-                      color: _currentindex == 3 ? selectedIcon : unSelectedIcon,
-                    ),
+            ),
+            BottomNavigationBarItem(
+              backgroundColor: ksoftcolor,
+              label: "Cards",
+              icon: ClipRect(
+                child: SizedBox(
+                  width: 28,
+                  height: 20,
+                  child: Image.asset(
+                    "lib/icons/credit_card.png",
+                    color: _currentindex == 3 ? selectedIcon : unSelectedIcon,
                   ),
                 ),
               ),
-              BottomNavigationBarItem(
-                backgroundColor: ksoftcolor,
-                label: "More",
-                icon: ClipRect(
-                  child: SizedBox(
-                    width: 28,
-                    height: 20,
-                    child: Image.asset(
-                      "lib/icons/more.png",
-                      color: _currentindex == 4 ? selectedIcon : unSelectedIcon,
-                    ),
+            ),
+            BottomNavigationBarItem(
+              backgroundColor: ksoftcolor,
+              label: "More",
+              icon: ClipRect(
+                child: SizedBox(
+                  width: 28,
+                  height: 20,
+                  child: Image.asset(
+                    "lib/icons/more.png",
+                    color: _currentindex == 4 ? selectedIcon : unSelectedIcon,
                   ),
                 ),
               ),
-            ]),
+            ),
+          ],
+        ),
         backgroundColor: Colors.black,
         body: IndexedStack(
           index: _currentindex,

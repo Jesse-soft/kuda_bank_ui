@@ -1,91 +1,16 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:kuda_bank_ui/widgets/home_screen/money_widget.dart';
 
 import '../constants.dart';
+import '../widgets/home_screen/transaction.dart';
 
-double blurImage = 0.1;
-getTransaction() {
-  List<Column> transactionlist = [];
-  for (int i = 0; i < detailsoftransaction.length; i++) {
-    var newItem = Column(
-      children: [
-        Container(
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(
-            vertical: 8,
-          ),
-          child: ListTile(
-            leading: const CircleAvatar(
-              backgroundImage: AssetImage(
-                'images/avatar.png',
-              ),
-            ),
-            title: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  detailsoftransaction[i],
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  timeoftransaction[i],
-                  style: const TextStyle(
-                    color: Colors.white70,
-                    fontSize: 10,
-                    fontWeight: FontWeight.normal,
-                  ),
-                )
-              ],
-            ),
-            trailing: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: blurImage == 5
-                  ? [
-                      const Text(
-                        "",
-                      ),
-                    ]
-                  : [
-                      Text(
-                        amountoftransaction[i],
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      )
-                    ],
-            ),
-          ),
-        ),
-        const Divider(
-          height: 3,
-          color: Color.fromARGB(239, 82, 81, 81),
-        )
-      ],
-    );
-    transactionlist.add(
-      newItem,
-    );
-  }
-  return Column(
-    children: transactionlist,
-  );
-}
-
-spendLayout(ontap, onDoubleTap) {
+//the enter spending layout
+spendLayout(
+  ontap,
+  onDoubleTap,
+) {
   return Column(
     children: [
       Container(
@@ -111,6 +36,7 @@ spendLayout(ontap, onDoubleTap) {
             Padding(
               padding: const EdgeInsets.only(
                 bottom: 20,
+                right: 10,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -143,7 +69,7 @@ spendLayout(ontap, onDoubleTap) {
                             ),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                   ClipRect(
@@ -164,84 +90,30 @@ spendLayout(ontap, onDoubleTap) {
                         ),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
             Row(
               children: [
-                Container(
-                  margin: const EdgeInsets.only(
-                    bottom: 10,
-                  ),
-                  width: 170,
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 8,
-                    horizontal: 14,
-                  ),
-                  decoration: BoxDecoration(
+                moneyWidget(
+                  'Convert',
+                  const Icon(
+                    Icons.restart_alt,
                     color: ksoftcolor,
-                    borderRadius: BorderRadius.circular(
-                      6,
-                    ),
                   ),
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.restart_alt,
-                        color: ksoftcolor,
-                      ),
-                      const SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        'Convert',
-                        style: TextStyle(
-                          color: Colors.grey.shade800,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
+                  140,
                 ),
                 const SizedBox(
-                  width: 30,
+                  width: 10,
                 ),
-                Container(
-                  margin: const EdgeInsets.only(
-                    bottom: 10,
+                moneyWidget(
+                  'Add Money',
+                  const Icon(
+                    Icons.add_circle_rounded,
+                    color: Colors.white,
                   ),
-                  width: 170,
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 8,
-                    horizontal: 14,
-                  ),
-                  decoration: BoxDecoration(
-                    color: ksoftcolor,
-                    borderRadius: BorderRadius.circular(
-                      6,
-                    ),
-                  ),
-                  child: Row(
-                    children: const [
-                      Icon(
-                        Icons.add_circle_rounded,
-                        color: Colors.white,
-                      ),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        'Add Money',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
+                  150,
                 ),
               ],
             ),
@@ -285,7 +157,7 @@ spendLayout(ontap, onDoubleTap) {
             getTransaction(),
           ],
         ),
-      )
+      ),
     ],
   );
 }

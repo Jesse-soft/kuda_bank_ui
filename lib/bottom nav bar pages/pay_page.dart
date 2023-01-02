@@ -63,7 +63,9 @@ class PayPage extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -154,6 +156,7 @@ getBeneficiaries() {
             width: 40,
             height: 40,
             color: Colors.amber,
+            child: Text(beneficiarienames[i]),
           ),
         ),
         Text(

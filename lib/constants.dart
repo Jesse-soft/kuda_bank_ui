@@ -1,5 +1,6 @@
 import 'package:flutter/animation.dart';
 
+double blurImage = 0.1;
 const Color ksoftcolor = Color.fromARGB(
   48,
   111,
